@@ -19,14 +19,6 @@ function showPage(list,page) {
    // create two variables which will represent the index for the first and last student on the page
    const startIndex = (page * 9) -9;
    const endIndex= page * 9;
-
-
-   //console.log('Start index is');
-   //console.log(startIndex);
-   //console.log('endindex is');
-   //console.log(endIndex);
-   //console.log('list.length');
-   //console.log(list.length)
    // select the element with a class of `student-list` and assign it to a variable
    const studentList = document.querySelector('.student-list');
    // set the innerHTML property of the variable you just created to an empty string
@@ -49,16 +41,12 @@ function showPage(list,page) {
            <span class="date">Joined 12-15-2005</span>
          </div>
        </li>`;
-       //console.log('startindex is');
-       //console.log(startIndex);
-       //console.log('endindex is');
-       //console.log(endIndex);
          // insert the above elements
          studentList.insertAdjacentHTML('beforeend',studentItem);
       }
-   //}   
-   }
+   }   
 }
+
 
 showPage(data, 1); //calling the showPage function with the data object array and page 1
 
