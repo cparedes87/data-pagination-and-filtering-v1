@@ -10,7 +10,6 @@ For assistance:
    Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
 */
 
-showPage(data, 1); //calling the showPage function with the data object array and page 1
 
 /*
 Create the `showPage` function
@@ -18,16 +17,16 @@ This function will create and insert/append the elements needed to display a "pa
 */
 function showPage(list,page) {
    // create two variables which will represent the index for the first and last student on the page
-   const startIndex = (page * 9) - 9;
-   const endIndex= (page * 9) * 9;
+   const startIndex = (page * 9) -9;
+   const endIndex= page * 9;
 
 
-   console.log('Start index is');
-   console.log(startIndex);
-   console.log('endindex is');
-   console.log(endIndex);
-   console.log('list.length');
-   console.log(list.length)
+   //console.log('Start index is');
+   //console.log(startIndex);
+   //console.log('endindex is');
+   //console.log(endIndex);
+   //console.log('list.length');
+   //console.log(list.length)
    // select the element with a class of `student-list` and assign it to a variable
    const studentList = document.querySelector('.student-list');
    // set the innerHTML property of the variable you just created to an empty string
@@ -35,9 +34,10 @@ function showPage(list,page) {
    //loop over the length of the `list` parameter
    for( var i = 0; i < list.length; i++ ) {
       // inside the loop create a conditional to display the proper students
-      //for(var j = 0; startIndex < list.length < endIndex; j++) { 
+      //for(startIndex; startIndex < list.length > endIndex; startIndex++) { 
+      for( var i = 0;  i >= startIndex && i < endIndex; i++ ) {
       // inside the conditional:
-         // create the elements needed to display the student information
+      // create the elements needed to display the student information
          const studentItem = `
          <li class="student-item cf">
          <div class="student-details">
@@ -49,11 +49,15 @@ function showPage(list,page) {
            <span class="date">Joined 12-15-2005</span>
          </div>
        </li>`;
-
+       //console.log('startindex is');
+       //console.log(startIndex);
+       //console.log('endindex is');
+       //console.log(endIndex);
          // insert the above elements
          studentList.insertAdjacentHTML('beforeend',studentItem);
       }
-   //}
+   //}   
+   }
 }
 
 showPage(data, 1); //calling the showPage function with the data object array and page 1
