@@ -5,6 +5,7 @@ FSJS Project 2 - Data Pagination and Filtering
 
 // Array of student objects
 const data = [
+  //One object
   {
     name: {
       title: "Miss",
@@ -22,6 +23,7 @@ const data = [
       thumbnail: "https://randomuser.me/api/portraits/thumb/women/25.jpg",
     },
   },
+  //Another object
   {
     name: {
       title: "Mrs",
