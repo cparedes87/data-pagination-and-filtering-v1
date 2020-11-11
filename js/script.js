@@ -27,7 +27,7 @@ function showPage(list,page) {
    for( var i = 0; i < list.length; i++ ) {
       // inside the loop create a conditional to display the proper students
       //for(startIndex; startIndex < list.length > endIndex; startIndex++) { 
-      for( var i = 0;  i >= startIndex && i < endIndex; i++ ) {
+      //for( var i = 0;  i >= startIndex && i < endIndex; i++ ) {
       // inside the conditional:
       // create the elements needed to display the student information
          const studentItem = `
@@ -43,7 +43,7 @@ function showPage(list,page) {
        </li>`;
          // insert the above elements
          studentList.insertAdjacentHTML('beforeend',studentItem);
-      }
+      //}
    }   
 }
 
