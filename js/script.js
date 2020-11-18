@@ -76,7 +76,7 @@ function addPagination(list) {
             //remove the "active" class from the previous button
             buttonInside.className = '';
             event.target.className = 'active';
-            console.log(event.target)
+            //console.log(event.target)
             showPage(data,event.target.textContent);
          }
       });
