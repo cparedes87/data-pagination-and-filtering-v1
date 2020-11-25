@@ -75,19 +75,63 @@ function addPagination(list) {
             buttonInside = document.querySelector('.active');
             //remove the "active" class from the previous button
             buttonInside.className = '';
+            // add the active class to the clicked button
             event.target.className = 'active';
             //console.log(event.target)
             showPage(data,event.target.textContent);
          }
       });
-    
-      
-      // add the active class to the clicked button
-      // call the showPage function passing the `list` parameter and page to display as argument
    }
 }
 
+// create an event listener on the `link-list` element
+linkList.addEventListener('click', () => {
+   // if the click target is a button:
+   if(event.target.tagName == "BUTTON"){
+      buttonInside = document.querySelector('.active');
+      //remove the "active" class from the previous button
+      buttonInside.className = '';
+      // add the active class to the clicked button
+      event.target.className = 'active';
+      //console.log(event.target)
+      showPage(data,event.target.textContent);
+   }
+});
 
-// Call functions
-showPage(data, 1); //calling the showPage function with the data object array and page 1
+function searchName(list) {
+   const studentHeader = document.querySelector('.header');
+   const searchBar = 
+  `<label for="search" class="student-search">
+   <input id="search" placeholder="Search by name...">
+   <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+   </label>`;
+
+   //add event listener on search bar
+   studentHeader.addEventListener('click', () => { 
+   if(event.target.tagName == "BUTTON") {
+      for( var i = 0; i < list.length; i++ ) {
+      if(search.value.length != 0 && search.value.toLowerCase() == list[i].name.textContent.toLowerCase()) {
+         console.log(list[i].name['first']);
+      }
+   }
+   }
+});
+  studentHeader.insertAdjacentHTML('beforeend',searchBar);
+}
+
+//add event listener on search bar
+studentHeader.addEventListener('click', () => { 
+   if(event.target.tagName == "BUTTON") {
+      if(search.value.length != 0 && search.value.toLowerCase() == names[i].textContent.toLowerCase()){
+         
+      }
+   }
+});
+
+//calling the showPage function with the data object array and page to display as argument
+showPage(data, 1); 
+//call the add pagination function to add pagination buttons passing data to calculate
+// the number of pagination buttons to show
 addPagination(data);
+//call the searchName function
+searchName();
